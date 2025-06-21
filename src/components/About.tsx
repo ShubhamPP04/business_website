@@ -39,7 +39,7 @@ const About = () => {
             </div>
 
             <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 text-lg">
-              Learn More About Me
+              Learn More
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

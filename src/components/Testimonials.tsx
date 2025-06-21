@@ -16,7 +16,7 @@ const testimonials = [
   },
   {
     text: "The support team is exceptional, guiding us through setup and providing ongoing assistance, ensuring our satisfaction.",
-    image: "https://images.unsplash.com/photo-1519340333755-c1aa5571fd46?w=100&h=100&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
     name: "Saman Malik",
     role: "Customer Support Lead",
   },
