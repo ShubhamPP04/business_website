@@ -35,7 +35,7 @@ To run the development server:
 ```sh
 npm run dev
 ```
-This will start the development server, usually at `http://localhost:5173`, and provide an instant preview of the application.
+This will start the development server and provide an instant preview of the application.
 
 ## Project Structure
 -   `public/`: Contains static assets like images and the favicon.
