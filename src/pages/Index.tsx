@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -9,11 +8,13 @@ import Pricing from '../components/Pricing';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import MobileNavbar from '../components/MobileNavbar';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
+    <div className="min-h-screen bg-white mt-14 md:mt-0">
+      <div className="md:hidden"><MobileNavbar /></div>
+      <div className="hidden md:block"><Navbar /></div>
       <section id="hero"><Hero /></section>
       <section id="services"><Services /></section>
       <section id="about"><About /></section>
