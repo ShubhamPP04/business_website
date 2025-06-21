@@ -12,7 +12,7 @@ import MobileNavbar from '../components/MobileNavbar';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white mt-14 md:mt-0">
+    <div className="min-h-screen bg-white mt-14 md:mt-0 overflow-x-hidden">
       <div className="md:hidden"><MobileNavbar /></div>
       <div className="hidden md:block"><Navbar /></div>
       <section id="hero"><Hero /></section>
