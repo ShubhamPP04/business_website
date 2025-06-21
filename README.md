@@ -1,4 +1,4 @@
-# Same Again Now - A React Application
+# Infinie (Business Website) - A React Application
 
 ## Description
 This is a React application built with Vite, TypeScript, Tailwind CSS, and shadcn-ui. It appears to be a landing page or a similar web application, featuring various components like About, Contact, Features, Hero, Navbar, Pricing, Services, and Testimonials.
