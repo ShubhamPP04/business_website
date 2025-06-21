@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -7,6 +7,17 @@ import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const mailtoLink = `mailto:hello@businesscoaching.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+    window.location.href = mailtoLink;
+  };
+
   return (
     <section className="py-20 bg-emerald-900 text-white relative overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div>
@@ -25,28 +36,36 @@ const Contact = () => {
           <Card className="bg-emerald-800/50 border-emerald-700">
             <CardContent className="p-8 relative z-10">
               <h3 className="text-2xl font-bold text-white mb-6">Send Us a Message</h3>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <Input 
-                    placeholder="Your Name" 
+                  <Input
+                    placeholder="Your Name"
                     className="bg-emerald-700/50 border-emerald-600 text-white placeholder:text-white focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all duration-300 ease-in-out"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
-                  <Input 
-                    type="email" 
-                    placeholder="Your Email" 
+                  <Input
+                    type="email"
+                    placeholder="Your Email"
                     className="bg-emerald-700/50 border-emerald-600 text-white placeholder:text-white focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all duration-300 ease-in-out"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-                <Input 
-                  placeholder="Subject" 
+                <Input
+                  placeholder="Subject"
                   className="bg-emerald-700/50 border-emerald-600 text-white placeholder:text-white focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all duration-300 ease-in-out"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
                 />
-                <Textarea 
-                  placeholder="Your Message" 
+                <Textarea
+                  placeholder="Your Message"
                   rows={6}
                   className="bg-emerald-700/50 border-emerald-600 text-white placeholder:text-white focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-all duration-300 ease-in-out"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                 />
-                <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-3 transition-all duration-300 transform hover:scale-105">
+                <Button type="submit" className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-3 transition-all duration-300 transform hover:scale-105">
                   Send Message
                 </Button>
               </form>
